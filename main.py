@@ -2,9 +2,10 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from sklearn.linear_model import LinearRegression
+# C:\Users\prash\DataScience\DataScience\MachineLearning\Class2\Assignment2\hiring.csv
 @st.cache_data
 def load_model():
-    df = pd.read_csv(r"C:\Users\prash\DataScience\DataScience\MachineLearning\Class2\Assignment2\hiring.csv")
+    df = pd.read_csv("hiring.csv")
     # Filling the nan values
     df["experience"] = df["experience"].fillna("zero")
     df["test_score(out of 10)"] = df["test_score(out of 10)"].fillna(df["test_score(out of 10)"].median())
